@@ -1,0 +1,16 @@
+.payments-page {
+  font-family: Arial, sans-serif;
+  padding: 40px;
+  text-align: center;
+}
+
+.title {
+  color: #3a6cf4;
+  font-size: 2.4rem;
+  margin-bottom: 10px;
+}
+
+.subtitle {
+  color: #555;
+  font-size: 1.1rem;
+}

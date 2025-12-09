@@ -1,0 +1,30 @@
+from fastapi import FastAPI
+from pydantic import BaseModel
+from kafka import KafkaProducer
+import json
+
+
+app = FastAPI()
+
+
+producer = KafkaProducer(
+bootstrap_servers=["kafka:9092"],
+value_serializer=lambda v: json.dumps(v).encode("utf-8")
+)
+
+
+class Msg(BaseModel):
+topic: str
+payload: dict
+
+
+@app.post('/send')
+async def send(msg: Msg):
+producer.send(msg.topic, msg.payload)
+producer.flush()
+return {"status": "sent", "topic": msg.topic, "payload": msg.payload}
+
+
+@app.get('/')
+async def root():
+return {"service": "producer"}

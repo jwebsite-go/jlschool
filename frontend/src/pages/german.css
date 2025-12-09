@@ -1,0 +1,38 @@
+.contacts-page {
+  font-family: Arial, sans-serif;
+  text-align: center;
+  padding: 40px;
+  color: #333;
+}
+
+.title {
+  font-size: 2.6rem;
+  color: #3a6cf4;
+}
+
+.subtitle {
+  font-size: 1.1rem;
+  color: #555;
+  margin-bottom: 30px;
+}
+
+.contact-card {
+  background: #f0f4ff;
+  padding: 20px;
+  max-width: 400px;
+  margin: 20px auto;
+  border-radius: 12px;
+  text-align: left;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+.contact-card h2 {
+  color: #3a6cf4;
+  margin-bottom: 10px;
+}
+
+.footer {
+  margin-top: 40px;
+  color: #777;
+  font-size: 0.9rem;
+}

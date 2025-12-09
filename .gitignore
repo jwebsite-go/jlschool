@@ -1,0 +1,28 @@
+# .env files
+.env
+*.env
+
+# Credentials
+credentials.json
+
+# Node modules
+node_modules/
+
+# Python cache
+pycache/
+*.pyc
+
+# Logs
+*.log
+
+# VS Code
+.vscode/
+
+!package.json
+!tsconfig.json
+!eslintconfig.json
+
+# секретные файлы
+credentials.json
+secrets/
+backend/credentials.json

@@ -1,0 +1,28 @@
+CREATE TABLE IF NOT EXISTS students (
+id SERIAL PRIMARY KEY,
+name TEXT,
+data JSONB,
+created_at TIMESTAMP DEFAULT now()
+);
+
+
+CREATE TABLE IF NOT EXISTS payments (
+id SERIAL PRIMARY KEY,
+amount NUMERIC,
+data JSONB,
+created_at TIMESTAMP DEFAULT now()
+);
+
+
+CREATE TABLE IF NOT EXISTS schedules (
+id SERIAL PRIMARY KEY,
+info JSONB,
+created_at TIMESTAMP DEFAULT now()
+);
+
+
+CREATE TABLE IF NOT EXISTS analytics (
+id SERIAL PRIMARY KEY,
+event JSONB,
+created_at TIMESTAMP DEFAULT now()
+);

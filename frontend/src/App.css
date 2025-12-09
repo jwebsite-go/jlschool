@@ -1,0 +1,82 @@
+/* Общие стили */
+.app {
+  font-family: Arial, sans-serif;
+  color: #333;
+}
+
+/* HEADER */
+.header {
+  background-color: #3a6cf4;
+  color: #fff;
+  text-align: center;
+  padding: 20px 0;
+}
+
+.header h1 {
+  margin: 0;
+  font-size: 2.8rem;
+}
+
+.header .subtitle {
+  margin-top: 5px;
+  font-size: 1.2rem;
+  font-weight: 400;
+}
+
+/* HERO */
+.hero {
+  text-align: center;
+  padding: 40px 20px;
+  background: #f0f4ff;
+}
+
+.hero h2 {
+  font-size: 2rem;
+  color: #3a6cf4;
+}
+
+.hero p {
+  font-size: 1.1rem;
+  margin: 10px 0 20px 0;
+  color: #555;
+}
+
+/* HERO NAVIGATION */
+.hero-nav {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 15px;
+  margin-top: 20px;
+}
+
+.hero-nav a {
+  text-decoration: none;
+  background-color: #3a6cf4;
+  color: #fff;
+  padding: 10px 18px;
+  border-radius: 8px;
+  font-weight: bold;
+  transition: all 0.2s;
+}
+
+.hero-nav a:hover {
+  background-color: #2a52c4;
+  transform: scale(1.05);
+}
+
+/* PAGE CONTENT */
+.page-content {
+  padding: 30px 20px;
+}
+
+/* FOOTER */
+.footer {
+  text-align: center;
+  padding: 20px 0;
+  background-color: #3a6cf4;
+  color: #fff;
+  margin-top: 40px;
+  font-size: 0.9rem;
+}
+

@@ -1,0 +1,84 @@
+version: '3.8'
+
+services:
+
+  zookeeper:
+    image: confluentinc/cp-zookeeper:latest
+    environment:
+      ZOOKEEPER_CLIENT_PORT: 2181
+
+  kafka:
+    image: confluentinc/cp-kafka:latest
+    depends_on:
+      - zookeeper
+    environment:
+      KAFKA_ZOOKEEPER_CONNECT: zookeeper:2181
+      KAFKA_ADVERTISED_LISTENERS: PLAINTEXT://kafka:9092
+      KAFKA_OFFSETS_TOPIC_REPLICATION_FACTOR: 1
+    ports:
+      - "9092:9092"
+
+  db:
+    image: postgres:15
+    environment:
+      POSTGRES_PASSWORD: postgres
+      POSTGRES_DB: school
+    volumes:
+      - ./db/init.sql:/docker-entrypoint-initdb.d/init.sql
+    ports:
+      - "5432:5432"
+
+  producer:
+    build: ./producer
+    depends_on:
+      - kafka
+    ports:
+      - "8000:8000"
+
+  student-service:
+    build: ./consumers/student-service
+    depends_on:
+      - kafka
+      - db
+    ports:
+      - "8001:8001"
+
+  payment-service:
+    build: ./consumers/payment-service
+    depends_on:
+      - kafka
+      - db
+    ports:
+      - "8002:8002"
+
+  schedule-service:
+    build: ./consumers/schedule-service
+    depends_on:
+      - kafka
+      - db
+    ports:
+      - "8003:8003"
+
+  analytics-service:
+    build: ./consumers/analytics-service
+    depends_on:
+      - kafka
+      - db
+    ports:
+      - "8004:8004"
+
+  gateway:
+    build: ./gateway   # ← ИСПРАВЛЕНО!
+    depends_on:
+      - student-service
+      - payment-service
+      - schedule-service
+      - analytics-service
+    ports:
+      - "8080:8080"
+
+networks:
+  default:
+    name: jlschool_default
+
+  
