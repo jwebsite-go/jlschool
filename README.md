@@ -9,16 +9,16 @@ principles**, including service separation, containerization, and orchestration.
 ---
 
 ## 📁 Project Structure
-.
-├── backend/        # Backend services (Go)
-├── frontend/       # Frontend application
-├── gateway/        # API Gateway
-├── producer/       # Message producer service
-├── consumers/      # Message consumer services
-├── db/             # Database configuration
-├── Dockerfile
-├── docker-compose.yml
-└── index.html
+
+- backend/        — Backend services (Go)
+- frontend/       — Frontend application
+- gateway/        — API Gateway
+- producer/       — Message producer service
+- consumers/      — Message consumer services
+- db/             — Database configuration
+- Dockerfile
+- docker-compose.yml
+- index.html
 ---
 
 ## 🧠 Architecture Overview
